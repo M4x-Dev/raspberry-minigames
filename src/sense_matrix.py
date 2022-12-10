@@ -8,8 +8,8 @@ class SenseMatrix:
     def set_pixel(self, x, y, value):
         self.__pixels[SenseMatrix.x_and_y_to_absolute(x, y)] = value
 
-    def get_pixels(self):
-        return self.__pixels
+    def draw(self, sense):
+        sense.set_pixels(self.__pixels)
 
     @staticmethod
     def x_and_y_to_absolute(x: int, y: int) -> int:
