@@ -17,9 +17,10 @@ bird = Bird(1, 4, bird_color)
 tubes = []
 tubes.append(TubeSet(3, 6, tube_color))
 
+second_iteration = True
 while True:
     # Reduce the game speed
-    sleep(0.1)
+    sleep(0.15)
 
     # Detect joystick events
     for event in sense.stick.get_events():
@@ -27,9 +28,14 @@ while True:
             bird.jump()
     bird.apply_gravity()
 
-    # Move all tubes
-    for tube in tubes:
-        tube.move(-1)
+    if second_iteration:
+        # Move all tubes
+        second_iteration = False
+        for tube in tubes:
+            tube.move(-1)
+    else:
+        # Update on next iteration
+        second_iteration = True
 
     # Draw the game
     game_matrix.fill_pixels(black)
