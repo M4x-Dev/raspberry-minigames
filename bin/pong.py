@@ -35,15 +35,16 @@ while True:
         # Game ended
         game_matrix.fill_pixels(black)
         game_matrix.override_pixels([
-            red, black, black, black, black, black, black, red,
+            black, black, black, black, black, black, black, black,
             black, red, black, black, black, black, red, black,
             black, black, red, black, black, red, black, black,
             black, black, black, red, red, black, black, black,
             black, black, black, red, red, black, black, black,
             black, black, red, black, black, red, black, black,
             black, red, black, black, black, black, red, black,
-            red, black, black, black, black, black, black, red
+            black, black, black, black, black, black, black, black
         ])
+        game_matrix.draw(sense)
         print("Game Ended")
         break
 
