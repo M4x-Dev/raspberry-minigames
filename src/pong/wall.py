@@ -5,6 +5,12 @@ class Wall:
         self.__y_position = 2
         self.__color = color
 
+    def get_y(self):
+        return self.__y_position
+
+    def get_height(self):
+        return self.__height
+
     def draw(self, matrix):
         for y in range(self.__height):
             matrix.set_pixel(self.__x_position, self.__y_position + y, self.__color)

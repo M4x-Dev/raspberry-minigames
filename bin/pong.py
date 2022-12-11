@@ -6,6 +6,7 @@ from time import sleep
 
 game_color = [0, 0, 190]
 black = [0, 0, 0]
+red = [255, 0, 0]
 
 sense = SenseHat()
 game_matrix = SenseMatrix()
@@ -28,6 +29,23 @@ while True:
 
     # Move the computer wall
     computer_wall.apply_y(ball[1] - 1)
+
+    # Check if the game ended
+    if ball[0] == 1 and ball_velocity[0] < 0 and (player_wall.get_y() > ball[1] or player_wall.get_y() < (ball[1] - player_wall.get_height())):
+        # Game ended
+        game_matrix.fill_pixels(black)
+        game_matrix.override_pixels([
+            red, black, black, black, black, black, black, red,
+            black, red, black, black, black, black, red, black,
+            black, black, red, black, black, red, black, black,
+            black, black, black, red, red, black, black, black,
+            black, black, black, red, red, black, black, black,
+            black, black, red, black, black, red, black, black,
+            black, red, black, black, black, black, red, black,
+            red, black, black, black, black, black, black, red
+        ])
+        print("Game Ended")
+        break
 
     # Collision detection
     if (ball[1] == 0 and ball_velocity[1] < 0) or (ball[1] == 7 and ball_velocity[1] > 0):
