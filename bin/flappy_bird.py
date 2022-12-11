@@ -14,7 +14,7 @@ sense = SenseHat()
 game_matrix = SenseMatrix()
 
 bird = Bird(1, 4, bird_color)
-tubes = [TubeSet(randint(0, 5), 6, tube_color)]
+tubes = [TubeSet(randint(0, 5), 8, tube_color)]
 
 second_iteration = True
 while True:
@@ -29,8 +29,8 @@ while True:
 
     if second_iteration:
         # Add new tubes
-        if tubes[-1].get_x() == 4:
-            tubes.append(TubeSet(randint(0, 5), 6, tube_color))
+        if tubes[-1].get_x() < 3:
+            tubes.append(TubeSet(randint(0, 5), 8, tube_color))
 
         # Move all tubes and remove redundant ones
         second_iteration = False
