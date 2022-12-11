@@ -36,6 +36,17 @@ while True:
     else:
         snake.pop()
 
+    # Maintain matrix bounds
+    for i in range(len(snake)):
+        if snake[i][0] < 0:
+            snake[i][0] = 7
+        elif snake[i][0] > 7:
+            snake[i][0] = 0
+        elif snake[i][1] < 0:
+            snake[i][1] = 7
+        elif snake[i][1] > 7:
+            snake[i][1] = 0
+
     # Draw the snake and the food
     for coordinates in snake:
         game_matrix.set_pixel(coordinates[0], coordinates[1], snake_color)
