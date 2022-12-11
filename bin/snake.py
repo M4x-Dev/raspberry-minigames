@@ -49,6 +49,7 @@ while True:
 
     # Draw the snake and the food
     for coordinates in snake:
+        print(f"Setting pixels: {coordinates}")
         game_matrix.set_pixel(coordinates[0], coordinates[1], snake_color)
     game_matrix.set_pixel(food[0], food[1], food_color)
     game_matrix.draw(sense)
