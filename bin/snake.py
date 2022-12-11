@@ -6,6 +6,7 @@ from time import sleep
 snake_color = [0, 0, 190]
 food_color = [190, 0, 0]
 black = [0, 0, 0]
+red = [255, 0, 0]
 
 sense = SenseHat()
 game_matrix = SenseMatrix()
@@ -37,6 +38,23 @@ while True:
         food = [randint(0, 7), randint(0, 7)]
     else:
         snake.pop()
+
+    # End condition
+    if snake[0] in snake[1:]:
+        # Game ended
+        game_matrix.fill_pixels(black)
+        game_matrix.override_pixels([
+            black, black, black, black, black, black, black, black,
+            black, red, black, black, black, black, red, black,
+            black, black, red, black, black, red, black, black,
+            black, black, black, red, red, black, black, black,
+            black, black, black, red, red, black, black, black,
+            black, black, red, black, black, red, black, black,
+            black, red, black, black, black, black, red, black,
+            black, black, black, black, black, black, black, black
+        ])
+        print("Game Ended")
+        break
 
     # Maintain matrix bounds
     for i in range(len(snake)):
