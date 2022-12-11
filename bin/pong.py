@@ -1,6 +1,7 @@
 from src.sense_matrix import SenseMatrix
 from src.pong.wall import Wall
 from sense_hat import SenseHat
+from random import randint
 from time import sleep
 
 game_color = [0, 0, 190]
@@ -8,9 +9,8 @@ black = [0, 0, 0]
 
 sense = SenseHat()
 game_matrix = SenseMatrix()
-
 ball = [4, 4]
-ball_velocity = [-1, 1]
+ball_velocity = [1 if randint(0, 10) > 5 else -1, 1 if randint(0, 10) > 5 else -1]
 
 player_wall = Wall(4, 0, game_color)
 computer_wall = Wall(4, 7, game_color)
