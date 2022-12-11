@@ -25,6 +25,7 @@ while True:
     for event in sense.stick.get_events():
         if "pressed" in event.action:
             bird.jump()
+    bird.apply_gravity()
 
     # Move all tubes
     for tube in tubes:
