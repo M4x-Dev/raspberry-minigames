@@ -10,4 +10,5 @@ class Wall:
             matrix.set_pixel(self.__x_position, self.__y_position + y, self.__color)
 
     def move(self, delta_y):
-        self.__y_position += delta_y
+        if 0 < self.__y_position <= (8 - self.__height):
+            self.__y_position += delta_y
