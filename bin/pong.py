@@ -26,6 +26,9 @@ while True:
         elif "down" in event.direction and "pressed" in event.action:
             player_wall.move(1)
 
+    # Move the computer wall
+    computer_wall.apply_y(ball[1])
+
     # Collision detection
     if (ball[1] == 0 and ball_velocity[1] < 0) or (ball[1] == 7 and ball_velocity[1] > 0):
         ball_velocity[1] = -ball_velocity[1]

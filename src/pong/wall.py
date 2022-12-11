@@ -14,3 +14,11 @@ class Wall:
             self.__y_position += delta_y
         elif delta_y > 0 and self.__y_position < (8 - self.__height):
             self.__y_position += delta_y
+
+    def apply_y(self, y):
+        if y < 0:
+            self.__y_position = 0
+        elif y > (8 - self.__height):
+            self.__y_position = 7 - self.__height
+        else:
+            self.__y_position = y
