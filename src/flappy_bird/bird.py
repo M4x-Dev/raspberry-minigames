@@ -8,8 +8,10 @@ class Bird:
     def normalized_velocity(self):
         if self.__y_velocity < 0:
             return -1
-        else:
+        elif self.__y_velocity > 0:
             return 1
+        else:
+            return 0
 
     def apply_gravity(self):
         if self.__y_velocity < 1:
