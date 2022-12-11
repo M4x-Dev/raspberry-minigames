@@ -14,5 +14,5 @@ class Wall:
         print(f"Current {self.__y_position}")
         if delta_y < 0 and self.__y_position > 0:
             self.__y_position += delta_y
-        elif delta_y > 0 and self.__y_position <= (8 - self.__height):
+        elif delta_y > 0 and self.__y_position < (8 - self.__height):
             self.__y_position += delta_y
