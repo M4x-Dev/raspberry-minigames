@@ -32,7 +32,7 @@ while True:
     # Collision detection
     if (ball[1] == 0 and ball_velocity[1] < 0) or (ball[1] == 7 and ball_velocity[1] > 0):
         ball_velocity[1] = -ball_velocity[1]
-    if (ball[0] == 0 and ball_velocity[0] < 0) or (ball[0] == 7 and ball_velocity[0] > 0):
+    if (ball[0] == 1 and ball_velocity[0] < 0) or (ball[0] == 6 and ball_velocity[0] > 0):
         ball_velocity[0] = -ball_velocity[0]
 
     # Move the ball
