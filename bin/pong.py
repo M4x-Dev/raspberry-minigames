@@ -23,4 +23,3 @@ while True:
     player_wall.draw(game_matrix)
     computer_wall.draw(game_matrix)
     game_matrix.draw(sense)
-    sleep(0.5)
