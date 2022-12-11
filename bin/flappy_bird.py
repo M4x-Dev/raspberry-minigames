@@ -16,8 +16,9 @@ game_matrix = SenseMatrix()
 bird = Bird(1, 4, bird_color)
 tubes = [TubeSet(randint(0, 5), 8, tube_color)]
 
+is_running = True
 second_iteration = True
-while True:
+while is_running:
     # Reduce the game speed
     sleep(0.15)
 
@@ -65,7 +66,7 @@ while True:
             ])
             game_matrix.draw(sense)
             print("Game Ended")
-            break
+            is_running = False
 
     # Draw the game
     game_matrix.fill_pixels(black)
