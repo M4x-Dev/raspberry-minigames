@@ -48,6 +48,25 @@ while True:
         # Update on next iteration
         second_iteration = True
 
+    # Collision detection
+    for tube in tubes:
+        if tube.is_intersecting(bird):
+            # Game Ended
+            game_matrix.fill_pixels(black)
+            game_matrix.override_pixels([
+                black, black, black, black, black, black, black, black,
+                black, red, black, black, black, black, red, black,
+                black, black, red, black, black, red, black, black,
+                black, black, black, red, red, black, black, black,
+                black, black, black, red, red, black, black, black,
+                black, black, red, black, black, red, black, black,
+                black, red, black, black, black, black, red, black,
+                black, black, black, black, black, black, black, black
+            ])
+            game_matrix.draw(sense)
+            print("Game Ended")
+            break
+
     # Draw the game
     game_matrix.fill_pixels(black)
     bird.draw(game_matrix)

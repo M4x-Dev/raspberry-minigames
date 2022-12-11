@@ -5,6 +5,12 @@ class Bird:
         self.__y_velocity = 1
         self.__color = color
 
+    def get_x(self):
+        return self.__x_position
+
+    def get_y(self):
+        return self.__y_position
+
     def normalized_velocity(self):
         if self.__y_velocity < 0:
             return -1

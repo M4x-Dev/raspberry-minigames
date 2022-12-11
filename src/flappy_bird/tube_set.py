@@ -7,6 +7,13 @@ class TubeSet:
     def get_x(self):
         return self.__x_position
 
+    def is_intersecting(self, bird):
+        if bird.get_x() == self.__x_position or bird.get_x() == self.__x_position + 1:
+            if bird.get_y() < self.__outlet_height or bird.get_y() > self.__outlet_height + 2:
+                return True
+
+        return False
+
     def draw(self, matrix):
         for x in range(2):
             for y in range(8):
