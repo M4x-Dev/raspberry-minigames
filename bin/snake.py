@@ -1,5 +1,6 @@
 from src.sense_matrix import SenseMatrix
 from sense_hat import SenseHat
+from random import randint
 from time import sleep
 
 snake_color = [0, 0, 190]
@@ -33,7 +34,7 @@ while True:
     # Update the snake body
     snake.insert(0, [snake[0][0] + snake_velocity[0], snake[0][1] + snake_velocity[1]])
     if snake[0] == food[0] and snake[1] == food[1]:
-        pass
+        food = [randint(0, 7), randint(0, 7)]
     else:
         snake.pop()
 
