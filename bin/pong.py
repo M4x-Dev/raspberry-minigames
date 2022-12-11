@@ -13,8 +13,8 @@ game_matrix = SenseMatrix()
 ball = [4, 4]
 ball_velocity = [1 if randint(0, 10) > 5 else -1, 1 if randint(0, 10) > 5 else -1]
 
-player_wall = Wall(4, 0, game_color)
-computer_wall = Wall(4, 7, game_color)
+player_wall = Wall(2, 0, game_color)
+computer_wall = Wall(2, 7, game_color)
 
 while True:
     # Reduce the game speed
