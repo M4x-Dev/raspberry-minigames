@@ -33,7 +33,7 @@ while True:
 
     # Update the snake body
     snake.insert(0, [snake[0][0] + snake_velocity[0], snake[0][1] + snake_velocity[1]])
-    if snake[0] == food[0] and snake[1] == food[1]:
+    if snake[0][0] == food[0] and snake[0][1] == food[1]:
         food = [randint(0, 7), randint(0, 7)]
     else:
         snake.pop()
