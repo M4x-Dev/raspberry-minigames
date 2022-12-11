@@ -8,6 +8,7 @@ black = [0, 0, 0]
 
 sense = SenseHat()
 game_matrix = SenseMatrix()
+game_matrix.fill_pixels(black)
 
 snake = [[0, 0]]
 snake_velocity = [1, 0]
@@ -48,6 +49,7 @@ while True:
             snake[i][1] = 0
 
     # Draw the snake and the food
+    game_matrix.fill_pixels(black)
     for coordinates in snake:
         print(f"Setting pixels: {coordinates}")
         game_matrix.set_pixel(coordinates[0], coordinates[1], snake_color)
